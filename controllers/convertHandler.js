@@ -10,7 +10,7 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result = input.replace(/([^0-9\.\/]+)/, '');
-    if (result.length === 0) return null;
+    if (result.length === 0) return 1;
     
     result = result.split('/');
     if (result.length > 2) return null;

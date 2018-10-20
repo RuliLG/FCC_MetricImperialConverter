@@ -72,7 +72,10 @@ suite('Functional Tests', function() {
         .query({input: 'kg'})
         .end(function(err, res){
           assert.equal(res.status, 200);
-          assert.equal(res.body.error, 'invalid number');
+          assert.equal(res.body.initNum, 1);
+          assert.equal(res.body.initUnit, 'kg');
+          assert.approximately(res.body.returnNum, 2.2046, 0.1);
+          assert.equal(res.body.returnUnit, 'lbs');
           done();
         });
       });

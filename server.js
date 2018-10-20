@@ -15,7 +15,10 @@ process.env.NODE_ENV = 'test';
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
-app.use(helmet());
+app.use(helmet({
+  xssFilter: true,
+  noSniff: true
+}));
 
 app.use(cors({origin: '*'})); //For FCC testing purposes only
 

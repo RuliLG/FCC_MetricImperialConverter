@@ -48,7 +48,7 @@ suite('Unit Tests', function(){
     
     test('No Numerical Input', function(done) {
       var input = 'test';
-      assert.isNull(convertHandler.getNum(input));
+      assert.equal(convertHandler.getNum(input), 1);
       done();
     }); 
     
